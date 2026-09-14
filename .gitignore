@@ -1,0 +1,23 @@
+# dependencies
+node_modules
+
+# build output
+dist
+dist-ssr
+
+# logs
+*.log
+dev-server.log
+
+# opencode / agent tooling
+.opencode
+.agents
+
+# misc artifacts
+footer-check.png
+
+# secrets & local env
+*.local
+.env
+.env.*
+!.env.example
