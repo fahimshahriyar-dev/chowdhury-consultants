@@ -33,7 +33,8 @@ const MEMBERS: Member[] = [
   {
     badge: "Our partner",
     name: "Md. Shahidul Islam Chowdhury",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=600&h=650&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=600&h=650&fit=crop",
     sectionBadge: "M.A. LLB Advocate, Judge Court, Dhaka",
     paragraphs: [
       "Md. Shahidul Islam Chowdhury is a highly respected legal practitioner and Partner at Chowdhury Consultants, bringing a wealth of expertise in corporate and commercial law.",
@@ -44,7 +45,8 @@ const MEMBERS: Member[] = [
   {
     badge: "Partner",
     name: "Nasrin Akter",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=650&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=650&fit=crop",
     paragraphs: [
       "Ms. Akter brings extensive expertise in corporate taxation and VAT advisory, helping organisations navigate Bangladesh's evolving fiscal landscape.",
       "She is instrumental in designing tax-efficient structures and has successfully represented numerous clients before the National Board of Revenue.",
@@ -53,7 +55,8 @@ const MEMBERS: Member[] = [
   {
     badge: "Partner",
     name: "Md. Shahidul Islam",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=650&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=650&fit=crop",
     paragraphs: [
       "Mr. Shahidul Islam specialises in statutory audit and financial reporting under IFRS and BFRS, serving listed companies and large conglomerates.",
       "He leads the firm's quality-control framework, ensuring that every engagement meets the highest standards of professional excellence.",
@@ -62,7 +65,8 @@ const MEMBERS: Member[] = [
   {
     badge: "Associate partner",
     name: "Farhana Hossain",
-    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&h=650&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&h=650&fit=crop",
     paragraphs: [
       "Ms. Hossain focuses on management consulting and internal audit, helping clients strengthen governance, risk management, and operational efficiency.",
       "She has led transformative advisory projects across banking, manufacturing, and the NGO sector over her career.",
@@ -71,7 +75,8 @@ const MEMBERS: Member[] = [
   {
     badge: "Associate partner",
     name: "Tanvir Ahmed Chowdhury",
-    image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&h=650&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&h=650&fit=crop",
     paragraphs: [
       "Mr. Tanvir Ahmed Chowdhury brings deep knowledge in corporate secretarial services, company law, and regulatory filings with RJSC.",
       "He advises clients on incorporation, restructuring, and compliance with the Companies Act, ensuring seamless interaction with regulators.",
@@ -332,7 +337,8 @@ const EXECUTIVES: SliderPerson[] = [
   {
     name: "Md. Moniruzzaman",
     sectionBadge: "FCA",
-    image: "https://images.unsplash.com/photo-1615109398623-88346a601842?w=600&h=650&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1615109398623-88346a601842?w=600&h=650&fit=crop",
     paragraphs: [
       "Md. Moniruzzaman is a Fellow Chartered Accountant (FCA) with comprehensive experience in audit, risk advisory, and financial management.",
       "He plays a pivotal role in maintaining auditing excellence and delivering tailored financial consultancy for enterprise clients.",
@@ -341,7 +347,8 @@ const EXECUTIVES: SliderPerson[] = [
   {
     name: "Md. Humayun Kabir",
     sectionBadge: "FCA",
-    image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=600&h=650&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=600&h=650&fit=crop",
     paragraphs: [
       "Md. Humayun Kabir is a Fellow Chartered Accountant (FCA) specialising in corporate taxation, direct and indirect tax strategies, and regulatory compliance.",
       "His strategic guidance helps businesses optimise tax obligations while staying aligned with changing tax framework requirements.",
@@ -350,7 +357,8 @@ const EXECUTIVES: SliderPerson[] = [
   {
     name: "Nur-E-Alam Siddique",
     sectionBadge: "ACA",
-    image: "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=600&h=650&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=600&h=650&fit=crop",
     paragraphs: [
       "Nur-E-Alam Siddique is an Associate Chartered Accountant (ACA) dedicated to statutory audit, corporate assurance, and business valuation.",
       "He contributes extensively to financial oversight, corporate reporting accuracy, and advisory services across multiple industry sectors.",
@@ -362,7 +370,8 @@ const MANAGERS: SliderPerson[] = [
   {
     name: "Sk. Al Mamun Hossain",
     sectionBadge: "CA(CC) ITP",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&h=650&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&h=650&fit=crop",
     paragraphs: [
       "Sk. Al Mamun Hossain is a qualified CA(CC) and Income Tax Practitioner (ITP) managing complex audit and taxation engagements.",
       "He ensures client operations remain fully compliant with statutory regulations while providing actionable financial insights.",
@@ -371,7 +380,8 @@ const MANAGERS: SliderPerson[] = [
   {
     name: "Md. Shamim Hossain",
     sectionBadge: "CA(CC) ITP",
-    image: "https://images.unsplash.com/photo-1601412436009-d964bd02edbc?w=600&h=650&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1601412436009-d964bd02edbc?w=600&h=650&fit=crop",
     paragraphs: [
       "Md. Shamim Hossain is an experienced CA(CC) and Income Tax Practitioner (ITP) overseeing tax compliance and financial reporting.",
       "He assists organisations in streamlining their fiscal workflows and implementing effective corporate governance practices.",
@@ -380,7 +390,8 @@ const MANAGERS: SliderPerson[] = [
   {
     name: "Md. Juwel Akram Ripo",
     sectionBadge: "ITP",
-    image: "https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&h=650&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&h=650&fit=crop",
     paragraphs: [
       "Md. Juwel Akram Ripo is an Income Tax Practitioner (ITP) with specialized expertise in tax filing, assessments, and dispute resolution.",
       "He supports businesses and individual clients across Bangladesh in navigating complex tax environments efficiently.",
@@ -392,7 +403,8 @@ const ASSISTANT_MANAGERS: SliderPerson[] = [
   {
     name: "Md. Sumon Sarker",
     sectionBadge: "Assistant manager",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&h=650&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&h=650&fit=crop",
     paragraphs: [
       "Md. Sumon Sarker plays a key role as Assistant Manager in audit field operations and financial reporting supervision.",
       "He works closely with client teams to ensure accurate document compilation and operational transparency.",
@@ -401,7 +413,8 @@ const ASSISTANT_MANAGERS: SliderPerson[] = [
   {
     name: "Md. Bayazid",
     sectionBadge: "Assistant manager",
-    image: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=600&h=650&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=600&h=650&fit=crop",
     paragraphs: [
       "Md. Bayazid contributes as Assistant Manager to corporate compliance, tax assessment support, and internal control reviews.",
       "His attention to detail strengthens engagement quality across varied client portfolios.",
@@ -410,7 +423,8 @@ const ASSISTANT_MANAGERS: SliderPerson[] = [
   {
     name: "Md. Zulfikar Hossain",
     sectionBadge: "Assistant manager",
-    image: "https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?w=600&h=650&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?w=600&h=650&fit=crop",
     paragraphs: [
       "Md. Zulfikar Hossain works as Assistant Manager focusing on assurance engagements and statutory filings.",
       "He facilitates efficient audit execution and supports client advisory requirements.",
@@ -422,7 +436,8 @@ const SUPPORT_STAFFS: SliderPerson[] = [
   {
     name: "Md. Imran Hossain",
     sectionBadge: "support staff",
-    image: "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?w=600&h=650&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?w=600&h=650&fit=crop",
     paragraphs: [
       "Md. Imran Hossain provides essential operational and administrative support for daily office workflow.",
       "He assists the team with documentation management, client correspondence, and logistics coordination.",
@@ -431,7 +446,8 @@ const SUPPORT_STAFFS: SliderPerson[] = [
   {
     name: "Mrs. Sahana Begum",
     sectionBadge: "support staff",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&h=650&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&h=650&fit=crop",
     paragraphs: [
       "Mrs. Sahana Begum manages administrative services and operational routines within the firm.",
       "She ensures smooth daily functioning and supports administrative efficiency across all departments.",
@@ -440,7 +456,8 @@ const SUPPORT_STAFFS: SliderPerson[] = [
   {
     name: "Mrs. Taslima Akhter",
     sectionBadge: "support staff",
-    image: "https://images.unsplash.com/photo-1601233749202-95d04d5b3c00?w=600&h=650&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1601233749202-95d04d5b3c00?w=600&h=650&fit=crop",
     paragraphs: [
       "Mrs. Taslima Akhter handles records management, document processing, and office coordination.",
       "Her dedicated support contributes to seamless communication and internal administrative workflow.",
@@ -692,14 +709,20 @@ const About = () => {
 
   const scrollToSection = (index: number) => {
     if (isScrollingRef.current || index < 0 || index >= MEMBERS.length) return;
-    const target = sectionRefs.current[index];
-    if (!target) return;
+    const container = containerRef.current;
+    if (!container) return;
+
     isScrollingRef.current = true;
-    target.scrollIntoView({ behavior: "smooth" });
     setActiveIndex(index);
-    setTimeout(() => {
-      isScrollingRef.current = false;
-    }, 900);
+
+    gsap.to(container, {
+      scrollTop: index * container.clientHeight,
+      duration: 1.4,
+      ease: "power3.inOut",
+      onComplete: () => {
+        isScrollingRef.current = false;
+      },
+    });
   };
 
   useEffect(() => {
@@ -839,6 +862,7 @@ const About = () => {
             />
           );
         })}
+
       </div>
     </div>
   );

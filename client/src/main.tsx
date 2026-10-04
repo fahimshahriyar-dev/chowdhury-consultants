@@ -7,6 +7,7 @@ import About from './pages/About'
 import Work from './pages/Work'
 import Profile from './pages/Clients'
 import Appointment from './pages/Appointment'
+import Services from './pages/Services'
 
 createRoot(document.getElementById('app')!).render(
   <StrictMode>
@@ -17,6 +18,8 @@ createRoot(document.getElementById('app')!).render(
         <Route path="/companies/:id" element={<Home />} />
         <Route path="/work" element={<Work />} />
         <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/clients" element={<Profile />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/appointment" element={<Appointment />} />
       </Routes>

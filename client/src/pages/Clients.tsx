@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from "react";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 interface ClientCategory {
   title: string;
@@ -228,18 +229,18 @@ const Clients: React.FC = () => {
                 className="flex flex-col md:flex-row items-start gap-6 md:gap-10 pb-10 border-b border-zinc-200/80 last:border-b-0"
               >
                 {/* Large Alphabet Indicator */}
-                <div className="w-16 md:w-24 text-5xl md:text-6xl font-extrabold text-black tracking-tighter flex-shrink-0 leading-none select-none">
+                <div className="w-12 md:w-16 text-4xl md:text-5xl font-extrabold text-black tracking-tighter flex-shrink-0 leading-none select-none">
                   {letter}
                 </div>
 
                 {/* Grid of Clients (Title on top, Company name below) */}
                 <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-6">
                   {items.map((item, idx) => (
-                    <div key={idx} className="flex flex-col space-y-1 group">
-                      <span className="text-[11px] md:text-xs font-semibold text-[#10B981] uppercase tracking-wider line-clamp-1">
+                    <div key={idx} className="flex flex-col space-y-1">
+                      <span className="text-xs md:text-sm font-bold text-[#10B981] uppercase tracking-wider line-clamp-1">
                         {item.categoryTitle}
                       </span>
-                      <h3 className="text-base md:text-[17px] font-bold text-zinc-900 leading-snug group-hover:text-black transition-colors">
+                      <h3 className="text-lg md:text-xl font-bold text-zinc-900 leading-snug">
                         {item.name}
                       </h3>
                     </div>
@@ -250,6 +251,7 @@ const Clients: React.FC = () => {
           })}
         </div>
       </main>
+      <Footer />
     </div>
   );
 };

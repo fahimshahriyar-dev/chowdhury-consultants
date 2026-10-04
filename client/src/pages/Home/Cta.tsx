@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
+import { Calendar, Clock } from "lucide-react";
 import PhoneInput, { type Value } from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 
@@ -17,6 +18,8 @@ const Cta = ({ active = false }: CtaProps) => {
   const [contactType, setContactType] = useState<"phone" | "email">("email");
   const [phone, setPhone] = useState<Value | undefined>();
   const [email, setEmail] = useState("");
+  const [selectedDate, setSelectedDate] = useState("");
+  const [selectedTime, setSelectedTime] = useState("");
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -188,16 +191,35 @@ const Cta = ({ active = false }: CtaProps) => {
             />
           </div>
 
-          {/* 4. Address (Textarea with non-resizable style) */}
-          <div className="flex flex-col gap-2">
-            <label className="text-xs font-semibold text-zinc-800 tracking-wide">
-              Address
-            </label>
-            <textarea
-              rows={2}
-              placeholder="Enter your address"
-              className="w-full px-4 py-3 rounded-xl border border-zinc-200 text-sm text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-zinc-400 transition-colors resize-none"
-            />
+          {/* 4. Date & Time Pickers (Side by Side) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {/* Date Picker */}
+            <div className="flex flex-col gap-2">
+              <label className="text-xs font-semibold text-zinc-800 tracking-wide flex items-center gap-1.5">
+                <Calendar className="w-3.5 h-3.5 text-zinc-500" />
+                <span>Date</span>
+              </label>
+              <input
+                type="date"
+                value={selectedDate}
+                onChange={(e) => setSelectedDate(e.target.value)}
+                className="w-full px-4 py-3 rounded-xl border border-zinc-200 text-sm text-zinc-800 focus:outline-none focus:border-zinc-400 transition-colors bg-white cursor-pointer"
+              />
+            </div>
+
+            {/* Time Picker */}
+            <div className="flex flex-col gap-2">
+              <label className="text-xs font-semibold text-zinc-800 tracking-wide flex items-center gap-1.5">
+                <Clock className="w-3.5 h-3.5 text-zinc-500" />
+                <span>Time</span>
+              </label>
+              <input
+                type="time"
+                value={selectedTime}
+                onChange={(e) => setSelectedTime(e.target.value)}
+                className="w-full px-4 py-3 rounded-xl border border-zinc-200 text-sm text-zinc-800 focus:outline-none focus:border-zinc-400 transition-colors bg-white cursor-pointer"
+              />
+            </div>
           </div>
 
           {/* Submit Button */}

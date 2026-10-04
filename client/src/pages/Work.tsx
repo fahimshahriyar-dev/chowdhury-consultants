@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import WorkShowcase from "./Home/HomeWork";
+import Footer from "../components/Footer";
 
 const Work: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const Work: React.FC = () => {
           showSeeMore={false}
         />
       </main>
+      <Footer />
     </div>
   );
 };

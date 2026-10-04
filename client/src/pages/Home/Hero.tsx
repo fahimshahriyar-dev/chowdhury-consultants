@@ -12,12 +12,12 @@ import {
   Building,
   UserCheck,
   CheckCircle2,
-  ArrowRight,
   Globe,
   Layers,
   Landmark,
   ExternalLink,
   Sparkles,
+  MapPin,
 } from "lucide-react";
 import heroBg from "../../assets/images/hero_bg.png";
 import sidebarBg from "../../assets/images/hero_bg-2.png";
@@ -52,8 +52,8 @@ const overviewStats = [
     desc: "MNCs & Conglomerates",
   },
   {
-    label: "Success Rate",
-    value: "99%",
+    label: "Individual Clients",
+    value: "2100+",
     icon: ShieldCheck,
     desc: "NBR Assessment & Appeals",
   },
@@ -201,7 +201,6 @@ const heroClientCategories = [
 ];
 
 const Hero: React.FC<HeroProps> = ({
-  onGoToHomeWork,
   title,
   subtitle,
   active = true,
@@ -210,7 +209,6 @@ const Hero: React.FC<HeroProps> = ({
   const [activeOption, setActiveOption] = useState<string>("Overview");
   const [selectedServiceCat, setSelectedServiceCat] = useState<string>("local");
   const [selectedClientCat, setSelectedClientCat] = useState<string>("mnc");
-  const [selectedWorkId, setSelectedWorkId] = useState<number>(1);
 
   const heroContainerRef = useRef<HTMLDivElement>(null);
   const badgeRef = useRef<HTMLDivElement>(null);
@@ -231,13 +229,11 @@ const Hero: React.FC<HeroProps> = ({
     { id: "Clients", label: "Clients", icon: Users },
   ];
 
-  // Helper to handle CTA / Navigation
+  // Helper to handle CTA / Location navigation
   const handlePrimaryCta = () => {
-    if (onGoToHomeWork) {
-      onGoToHomeWork();
-    } else {
-      navigate("/appointment");
-    }
+    const address = "Eastern Mansion, Room # 3/7 (3rd Floor), 67/9 Pioneer Road, Kakrail, Dhaka-1000";
+    const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+    window.open(mapsUrl, "_blank", "noopener,noreferrer");
   };
 
   // Title words array builder
@@ -477,8 +473,24 @@ const Hero: React.FC<HeroProps> = ({
             ref={subtitleRef}
             className="mt-3 text-zinc-300 text-xs md:text-sm lg:text-base max-w-2xl md:max-w-3xl lg:max-w-4xl leading-relaxed text-center"
           >
-            {subtitle ||
-              "Trusted tax assessment, VAT compliance, corporate law, and RJSC advisory for leading multinationals and enterprises."}
+            {(() => {
+              const text =
+                subtitle ||
+                "Trusted tax assessment, VAT compliance, corporate law, and RJSC advisory for leading multinationals and enterprises.";
+              if (text.includes("multinational")) {
+                const parts = text.split(/(multinationals|multinational)/i);
+                return parts.map((part, idx) =>
+                  /multinational/i.test(part) ? (
+                    <span key={idx} className="text-[#10B981] font-bold">
+                      {part}
+                    </span>
+                  ) : (
+                    part
+                  ),
+                );
+              }
+              return text;
+            })()}
           </p>
 
           <button
@@ -486,8 +498,8 @@ const Hero: React.FC<HeroProps> = ({
             onClick={handlePrimaryCta}
             className="mt-5 bg-white hover:bg-zinc-200 text-black font-semibold px-6 py-2.5 rounded-full text-xs md:text-sm transition-all duration-200 shadow-lg cursor-pointer hover:scale-105 active:scale-95 flex items-center gap-2"
           >
-            <span>Book Consultation</span>
-            <ArrowRight className="w-4 h-4 text-black" />
+            <MapPin className="w-4 h-4 text-black" />
+            <span>Find Us</span>
           </button>
         </div>
 
@@ -581,7 +593,7 @@ const Hero: React.FC<HeroProps> = ({
               {/* Action Link per Tab */}
               {activeOption === "Works" && (
                 <button
-                  onClick={() => onGoToHomeWork ? onGoToHomeWork() : navigate("/work")}
+                  onClick={() => navigate("/work")}
                   className="text-xs text-[#10b981] hover:text-emerald-400 flex items-center gap-1 font-medium cursor-pointer transition-colors"
                 >
                   <span>View All Works</span>
@@ -590,7 +602,7 @@ const Hero: React.FC<HeroProps> = ({
               )}
               {activeOption === "Services" && (
                 <button
-                  onClick={() => onGoToHomeWork ? onGoToHomeWork() : navigate("/about")}
+                  onClick={() => navigate("/services")}
                   className="text-xs text-[#10b981] hover:text-emerald-400 flex items-center gap-1 font-medium cursor-pointer transition-colors"
                 >
                   <span>All 30+ Services</span>
@@ -623,13 +635,13 @@ const Hero: React.FC<HeroProps> = ({
                       return (
                         <div
                           key={idx}
-                          className="data-anim-item bg-zinc-900/80 border border-zinc-800 rounded-xl p-3 flex flex-col justify-between hover:border-[#10b981]/50 transition-all group"
+                          className="data-anim-item bg-zinc-900/80 border border-zinc-800 rounded-xl p-3 flex flex-col justify-between"
                         >
                           <div className="flex items-center justify-between mb-1">
                             <span className="text-xs text-zinc-400 font-medium">
                               {stat.label}
                             </span>
-                            <StatIcon className="w-4 h-4 text-[#10b981] group-hover:scale-110 transition-transform" />
+                            <StatIcon className="w-4 h-4 text-[#10b981]" />
                           </div>
                           <div className="text-xl md:text-2xl font-bold text-white tracking-tight">
                             {stat.value}
@@ -647,7 +659,7 @@ const Hero: React.FC<HeroProps> = ({
                     {overviewHighlights.map((item, idx) => (
                       <div
                         key={idx}
-                        className="data-anim-item bg-zinc-900/40 border border-zinc-800/80 hover:bg-zinc-900/90 rounded-xl p-3 transition-colors"
+                        className="data-anim-item bg-zinc-900/40 border border-zinc-800/80 rounded-xl p-3"
                       >
                         <div className="flex items-center justify-between mb-1.5">
                           <span className="text-xs font-semibold text-white">
@@ -671,24 +683,15 @@ const Hero: React.FC<HeroProps> = ({
                 <div className="space-y-3">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {heroWorks.map((work) => {
-                      const isSelected = selectedWorkId === work.id;
                       return (
                         <div
                           key={work.id}
-                          onClick={() => setSelectedWorkId(work.id)}
-                          className={`data-anim-item p-3.5 rounded-xl border transition-all cursor-pointer ${
-                            isSelected
-                              ? "bg-zinc-900/90 border-[#10b981] shadow-lg shadow-[#10b981]/10"
-                              : "bg-zinc-900/40 border-zinc-800 hover:border-zinc-700"
-                          }`}
+                          className="data-anim-item p-3.5 rounded-xl border bg-zinc-900/40 border-zinc-800"
                         >
                           <div className="flex justify-between items-start mb-1">
                             <h3 className="text-sm font-semibold text-white">
                               {work.company}
                             </h3>
-                            <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#10b981]/15 text-[#10b981] font-medium border border-[#10b981]/30">
-                              {work.status}
-                            </span>
                           </div>
                           <div className="text-xs text-zinc-300 mb-1 font-medium">
                             {work.service}
@@ -794,10 +797,10 @@ const Hero: React.FC<HeroProps> = ({
                           {cat.clients.map((client, idx) => (
                             <div
                               key={idx}
-                              className="data-anim-item bg-zinc-900/60 hover:bg-zinc-900 border border-zinc-800/80 hover:border-[#10b981]/40 p-2.5 rounded-xl flex items-center gap-2.5 transition-all group"
+                              className="data-anim-item bg-zinc-900/60 border border-zinc-800/80 p-2.5 rounded-xl flex items-center gap-2.5"
                             >
-                              <div className="w-2 h-2 rounded-full bg-[#10b981] shrink-0 group-hover:scale-125 transition-transform" />
-                              <span className="text-xs font-medium text-zinc-200 group-hover:text-white truncate">
+                              <div className="w-2 h-2 rounded-full bg-[#10b981] shrink-0" />
+                              <span className="text-xs font-medium text-zinc-200 truncate">
                                 {client}
                               </span>
                             </div>
@@ -834,8 +837,8 @@ const Hero: React.FC<HeroProps> = ({
                 onClick={handlePrimaryCta}
                 className="text-[#10b981] hover:text-emerald-300 font-medium flex items-center gap-1 cursor-pointer transition-colors"
               >
-                <span>Consultation</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <MapPin className="w-3.5 h-3.5" />
+                <span>Find Us</span>
               </button>
             </div>
           </div>

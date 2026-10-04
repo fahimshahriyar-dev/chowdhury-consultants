@@ -178,7 +178,6 @@ const HomeWork = ({
 
   // Modal State
   const [selectedWork, setSelectedWork] = useState<WorkItem | null>(null);
-  const [selectedImageIndex, setSelectedImageIndex] = useState<number>(0);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -238,11 +237,6 @@ const HomeWork = ({
     return () => ctx.revert();
   }, [active]);
 
-  const openModal = (work: WorkItem, startIndex = 0) => {
-    setSelectedWork(work);
-    setSelectedImageIndex(startIndex);
-  };
-
   const closeModal = () => {
     setSelectedWork(null);
   };
@@ -293,7 +287,8 @@ const HomeWork = ({
             return (
               <div
                 key={work.id}
-                className="bg-[#F8F9FA] border border-zinc-200/80 rounded-3xl p-6 flex flex-col justify-between hover:shadow-md transition-shadow duration-300 will-change-transform"
+                onClick={() => setSelectedWork(work)}
+                className="bg-[#F8F9FA] border border-zinc-200/80 rounded-3xl p-6 flex flex-col justify-between cursor-pointer"
               >
                 {/* Header: Company & Service */}
                 <div className="text-center mb-6">
@@ -311,27 +306,21 @@ const HomeWork = ({
                 {/* White Box for Images (2x2 Grid with divider lines) */}
                 <div className="bg-white rounded-2xl border border-zinc-200 overflow-hidden grid grid-cols-2 grid-rows-2 divide-x divide-y divide-zinc-200 aspect-square">
                   {/* Image 1 */}
-                  <div
-                    onClick={() => openModal(work, 0)}
-                    className="relative cursor-pointer overflow-hidden group"
-                  >
+                  <div className="relative overflow-hidden">
                     <img
                       src={work.images[0]}
                       alt={`${work.company} 1`}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-cover"
                     />
                   </div>
 
                   {/* Image 2 */}
-                  <div
-                    onClick={() => openModal(work, 1)}
-                    className="relative cursor-pointer overflow-hidden group"
-                  >
+                  <div className="relative overflow-hidden">
                     {work.images[1] ? (
                       <img
                         src={work.images[1]}
                         alt={`${work.company} 2`}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        className="w-full h-full object-cover"
                       />
                     ) : (
                       <div className="bg-zinc-50 w-full h-full" />
@@ -339,15 +328,12 @@ const HomeWork = ({
                   </div>
 
                   {/* Image 3 */}
-                  <div
-                    onClick={() => openModal(work, 2)}
-                    className="relative cursor-pointer overflow-hidden group"
-                  >
+                  <div className="relative overflow-hidden">
                     {work.images[2] ? (
                       <img
                         src={work.images[2]}
                         alt={`${work.company} 3`}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        className="w-full h-full object-cover"
                       />
                     ) : (
                       <div className="bg-zinc-50 w-full h-full" />
@@ -357,23 +343,17 @@ const HomeWork = ({
                   {/* Image 4 / More Image Button */}
                   <div className="relative overflow-hidden bg-zinc-50 flex items-center justify-center">
                     {extraCount > 0 ? (
-                      <button
-                        onClick={() => openModal(work, 3)}
-                        className="w-full h-full bg-zinc-900/5 hover:bg-zinc-900/10 flex flex-col items-center justify-center p-2 text-center transition-colors group cursor-pointer"
-                      >
-                        <span className="text-base font-bold text-black group-hover:scale-105 transition-transform">
+                      <div className="w-full h-full bg-zinc-900/5 flex flex-col items-center justify-center p-2 text-center">
+                        <span className="text-base font-bold text-black">
                           {extraCount}+ see all
                         </span>
-                      </button>
+                      </div>
                     ) : work.images[3] ? (
-                      <div
-                        onClick={() => openModal(work, 3)}
-                        className="w-full h-full cursor-pointer group"
-                      >
+                      <div className="w-full h-full">
                         <img
                           src={work.images[3]}
                           alt={`${work.company} 4`}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          className="w-full h-full object-cover"
                         />
                       </div>
                     ) : (
@@ -400,7 +380,7 @@ const HomeWork = ({
       {/* Work Popup Modal */}
       <WorkModal
         work={selectedWork}
-        initialIndex={selectedImageIndex}
+        initialIndex={0}
         onClose={closeModal}
       />
     </div>

@@ -14,7 +14,9 @@ const Navbar = ({}: NavbarProps) => {
   const location = useLocation();
   const path = location.pathname;
 
-  const linkClass = (section: "home" | "work" | "about" | "profile") => {
+  const linkClass = (
+    section: "home" | "work" | "about" | "services" | "profile",
+  ) => {
     const isActive =
       section === "home"
         ? path === "/"
@@ -22,15 +24,19 @@ const Navbar = ({}: NavbarProps) => {
           ? path === "/work"
           : section === "about"
             ? path === "/about"
-            : section === "profile"
-              ? path === "/profile"
-              : false;
+            : section === "services"
+              ? path === "/services"
+              : section === "profile"
+                ? path === "/profile"
+                : false;
     return isActive
       ? "text-xs sm:text-sm font-semibold text-black transition-colors uppercase tracking-wider cursor-pointer"
       : "text-xs sm:text-sm font-semibold text-black/60 hover:text-black transition-colors uppercase tracking-wider cursor-pointer";
   };
 
-  const mobileLinkClass = (section: "home" | "work" | "about" | "profile") => {
+  const mobileLinkClass = (
+    section: "home" | "work" | "about" | "services" | "profile",
+  ) => {
     const isActive =
       section === "home"
         ? path === "/"
@@ -38,9 +44,11 @@ const Navbar = ({}: NavbarProps) => {
           ? path === "/work"
           : section === "about"
             ? path === "/about"
-            : section === "profile"
-              ? path === "/profile"
-              : false;
+            : section === "services"
+              ? path === "/services"
+              : section === "profile"
+                ? path === "/profile"
+                : false;
     return isActive
       ? "text-base font-semibold text-black transition-colors uppercase tracking-wider cursor-pointer text-left w-full py-2.5 px-4 rounded-xl bg-black/10"
       : "text-base font-semibold text-black/70 hover:text-black hover:bg-black/5 transition-colors uppercase tracking-wider cursor-pointer text-left w-full py-2.5 px-4 rounded-xl";
@@ -58,7 +66,9 @@ const Navbar = ({}: NavbarProps) => {
     setMenuOpen(false);
   }, [path]);
 
-  const handleNavClick = (section: "home" | "work" | "about" | "profile") => {
+  const handleNavClick = (
+    section: "home" | "work" | "about" | "services" | "profile",
+  ) => {
     setMenuOpen(false);
     if (section === "home") {
       if (path === "/") {
@@ -72,6 +82,8 @@ const Navbar = ({}: NavbarProps) => {
       navigate("/work");
     } else if (section === "about") {
       navigate("/about");
+    } else if (section === "services") {
+      navigate("/services");
     } else if (section === "profile") {
       navigate("/profile");
     }
@@ -85,10 +97,7 @@ const Navbar = ({}: NavbarProps) => {
       </div>
 
       {/* Navigation Options - Left Side */}
-      <nav
-        ref={navRef}
-        className="flex items-center justify-start z-10"
-      >
+      <nav ref={navRef} className="flex items-center justify-start z-10">
         {/* Mobile hamburger toggle */}
         <button
           onClick={() => setMenuOpen((prev) => !prev)}
@@ -118,6 +127,12 @@ const Navbar = ({}: NavbarProps) => {
             className={linkClass("about")}
           >
             About
+          </button>
+          <button
+            onClick={() => handleNavClick("services")}
+            className={linkClass("services")}
+          >
+            Services
           </button>
           <button
             onClick={() => handleNavClick("profile")}
@@ -158,6 +173,12 @@ const Navbar = ({}: NavbarProps) => {
             className={mobileLinkClass("about")}
           >
             About
+          </button>
+          <button
+            onClick={() => handleNavClick("services")}
+            className={mobileLinkClass("services")}
+          >
+            Services
           </button>
           <button
             onClick={() => handleNavClick("profile")}

@@ -24,9 +24,21 @@ interface HomeCompaniesProps {
 }
 
 const stats = [
-  { label: "Satisfied Clients", value: "70+", icon: <Users className="w-4 h-4 text-[#10B981]" /> },
-  { label: "Years of Trust", value: "25+", icon: <Award className="w-4 h-4 text-[#10B981]" /> },
-  { label: "Success Rate", value: "99%", icon: <ShieldCheck className="w-4 h-4 text-[#10B981]" /> },
+  {
+    label: "Years of Trust",
+    value: "25+",
+    icon: <Award className="w-4 h-4 text-[#10B981]" />,
+  },
+  {
+    label: "Corporate Clients",
+    value: "70+",
+    icon: <Users className="w-4 h-4 text-[#10B981]" />,
+  },
+  {
+    label: "Individual Clients",
+    value: "2100+",
+    icon: <ShieldCheck className="w-4 h-4 text-[#10B981]" />,
+  },
 ];
 
 interface CompanyBox {
@@ -41,7 +53,9 @@ const boxes: CompanyBox[] = [
   {
     id: 1,
     title: "Multinational Companies",
-    icon: <Globe className="w-4 h-4 lg:w-5 lg:h-5 text-[#10B981] flex-shrink-0" />,
+    icon: (
+      <Globe className="w-4 h-4 lg:w-5 lg:h-5 text-[#10B981] flex-shrink-0" />
+    ),
     companies: [
       "Grameen Phone Ltd.",
       "Grameenphone IT Ltd.",
@@ -54,12 +68,14 @@ const boxes: CompanyBox[] = [
       "Grameen Anergy Limited",
       "Grameen Shakti",
     ],
-    visibleCount: 4,
+    visibleCount: 7,
   },
   {
     id: 2,
     title: "Group Companies",
-    icon: <Layers className="w-4 h-4 lg:w-5 lg:h-5 text-[#10B981] flex-shrink-0" />,
+    icon: (
+      <Layers className="w-4 h-4 lg:w-5 lg:h-5 text-[#10B981] flex-shrink-0" />
+    ),
     companies: [
       "Baly Group of Company",
       "Nur & Nahar Group of Company",
@@ -72,12 +88,14 @@ const boxes: CompanyBox[] = [
       "Lucky Group of Company",
       "Shamoli Garments Ltd. Group of Company",
     ],
-    visibleCount: 4,
+    visibleCount: 7,
   },
   {
     id: 3,
     title: "100% Foreign Shareholder Company",
-    icon: <Share2 className="w-4 h-4 lg:w-5 lg:h-5 text-[#10B981] flex-shrink-0" />,
+    icon: (
+      <Share2 className="w-4 h-4 lg:w-5 lg:h-5 text-[#10B981] flex-shrink-0" />
+    ),
     companies: [
       "The Delegation of European Union",
       "Fullcharm Fashions Knitwear Ltd.",
@@ -86,13 +104,18 @@ const boxes: CompanyBox[] = [
       "Caigle Bangladesh Trading Ltd.",
       "Fucheng Enterprise Ltd.",
       "Xing Sheng (HK) Bangladesh Ltd.",
+      "Global Energy Bangladesh Ltd.",
+      "Pacific Rim Logistics Ltd.",
+      "Orient Global Services Ltd.",
     ],
-    visibleCount: 5,
+    visibleCount: 7,
   },
   {
     id: 4,
     title: "100% Foreign Liaison Office",
-    icon: <Landmark className="w-4 h-4 lg:w-5 lg:h-5 text-[#10B981] flex-shrink-0" />,
+    icon: (
+      <Landmark className="w-4 h-4 lg:w-5 lg:h-5 text-[#10B981] flex-shrink-0" />
+    ),
     companies: [
       "Triton Textile Limited",
       "VF Asia Limited",
@@ -101,26 +124,37 @@ const boxes: CompanyBox[] = [
       "Sun fortune Private Ltd.",
       "Consulting Services International Ltd.",
       "Li & Fung (Bangladesh) Ltd.",
+      "Target Sourcing Services Ltd.",
+      "H&M Hennes & Mauritz Overseas Ltd.",
+      "Marks & Spencer Asia Ltd.",
     ],
-    visibleCount: 5,
+    visibleCount: 7,
   },
   {
     id: 5,
     title: "Pharmaceuticals Companies",
-    icon: <Pill className="w-4 h-4 lg:w-5 lg:h-5 text-[#10B981] flex-shrink-0" />,
+    icon: (
+      <Pill className="w-4 h-4 lg:w-5 lg:h-5 text-[#10B981] flex-shrink-0" />
+    ),
     companies: [
       "Rephco Pharmaceuticals Ltd.",
       "Sanofi Aventis Limited",
       "Bangladesh Hospital Services Ltd.",
       "Inbiz Chemotic Limited",
       "Rockea Chemical Ind. Limited",
+      "Novartis Bangladesh Ltd.",
+      "Square Pharmaceuticals Ltd.",
+      "Beximco Pharmaceuticals Ltd.",
+      "Incepta Pharmaceuticals Ltd.",
     ],
-    visibleCount: 5,
+    visibleCount: 7,
   },
   {
     id: 6,
     title: "100% Export Oriented Garments Companies",
-    icon: <Shirt className="w-4 h-4 lg:w-5 lg:h-5 text-[#10B981] flex-shrink-0" />,
+    icon: (
+      <Shirt className="w-4 h-4 lg:w-5 lg:h-5 text-[#10B981] flex-shrink-0" />
+    ),
     companies: [
       "ASRO Fashion Limited",
       "Doel House Limited",
@@ -131,26 +165,35 @@ const boxes: CompanyBox[] = [
       "Asia Appeals Manufacturing Co. Limited",
       "Myth Limited",
       "Sungarh Textile Ltd.",
+      "Envoy Textiles Limited",
     ],
-    visibleCount: 5,
+    visibleCount: 7,
   },
   {
     id: 7,
     title: "Developers Companies",
-    icon: <Building2 className="w-4 h-4 lg:w-5 lg:h-5 text-[#10B981] flex-shrink-0" />,
+    icon: (
+      <Building2 className="w-4 h-4 lg:w-5 lg:h-5 text-[#10B981] flex-shrink-0" />
+    ),
     companies: [
       "Jaas Proprieties Limited",
       "Mystical Properties Limited",
       "Nur & Naher Properties Limited",
       "SAS Building Makers Ltd.",
       "SAS Structural Limited",
+      "Building Technology & Ideas Ltd.",
+      " Concord Real Estate & Development",
+      "Sheltech (Pvt.) Ltd.",
+      "Navana Real Estate Ltd.",
     ],
     visibleCount: 4,
   },
   {
     id: 8,
     title: "100% Foreign Based Companies",
-    icon: <Earth className="w-4 h-4 lg:w-5 lg:h-5 text-[#10B981] flex-shrink-0" />,
+    icon: (
+      <Earth className="w-4 h-4 lg:w-5 lg:h-5 text-[#10B981] flex-shrink-0" />
+    ),
     companies: [
       "Nokia Dhaka Ltd.",
       "Hop Lun (Bangladesh) Ltd.",
@@ -163,12 +206,14 @@ const boxes: CompanyBox[] = [
       "Broadcast Worldwide Ltd.",
       "TVS Interconnect Systems Ltd.",
     ],
-    visibleCount: 6,
+    visibleCount: 4,
   },
   {
     id: 9,
     title: "Others Companies",
-    icon: <MoreHorizontal className="w-4 h-4 lg:w-5 lg:h-5 text-[#10B981] flex-shrink-0" />,
+    icon: (
+      <MoreHorizontal className="w-4 h-4 lg:w-5 lg:h-5 text-[#10B981] flex-shrink-0" />
+    ),
     companies: [
       "Cross World Limited",
       "Cross World Power Limited",
@@ -177,8 +222,11 @@ const boxes: CompanyBox[] = [
       "Shaheen Cable Wire Drawings Ltd.",
       "Farzana Shakil Makeovers Salon Limited",
       "Comilla Consortium Limited",
+      "Apex Footwear Limited",
+      "United Power Generation & Distribution Ltd.",
+      "Brac Bank Ltd.",
     ],
-    visibleCount: 6,
+    visibleCount: 7,
   },
 ];
 
@@ -190,7 +238,9 @@ const HomeCompanies = ({
   onGoToPreviousPage,
   onGoToNextPage,
 }: HomeCompaniesProps) => {
-  const [selectedCategory, setSelectedCategory] = useState<CompanyBox | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<CompanyBox | null>(
+    null,
+  );
   const section1Ref = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const headerBadgeRef = useRef<HTMLDivElement>(null);
@@ -200,7 +250,9 @@ const HomeCompanies = ({
   useEffect(() => {
     const ctx = gsap.context(() => {
       const titleWords = titleRef.current?.querySelectorAll("h1 .word") ?? [];
-      const statItems = statsRef.current ? Array.from(statsRef.current.children) : [];
+      const statItems = statsRef.current
+        ? Array.from(statsRef.current.children)
+        : [];
       const boxElements = gridRef.current
         ? Array.from(gridRef.current.querySelectorAll("[data-box]")).sort(
             (a, b) => {
@@ -267,7 +319,7 @@ const HomeCompanies = ({
             stagger: 0.1,
             ease: "power3.out",
           },
-          "-=0.6"
+          "-=0.6",
         )
         // 4 & 5. Boxes appear top boxes first; each box's title reveals
         // word by word as soon as its box starts to appear
@@ -281,7 +333,7 @@ const HomeCompanies = ({
             stagger: 0.12,
             ease: "power3.out",
           },
-          "boxes"
+          "boxes",
         );
 
       boxTitlesByBox.forEach((words, i) => {
@@ -294,7 +346,7 @@ const HomeCompanies = ({
             stagger: 0.06,
             ease: "power3.out",
           },
-          `boxes+=${i * 0.12 + 0.15}`
+          `boxes+=${i * 0.12 + 0.15}`,
         );
       });
     }, section1Ref);
@@ -324,7 +376,10 @@ const HomeCompanies = ({
       id="companies-scroll"
       className="relative w-full h-screen overflow-hidden bg-[#FEFEFE] pt-20 pb-8 px-4 md:px-12 lg:px-20 flex flex-col"
     >
-      <section ref={section1Ref} className="container mx-auto max-w-[1400px] flex flex-col h-full">
+      <section
+        ref={section1Ref}
+        className="container mx-auto max-w-[1400px] flex flex-col h-full"
+      >
         {/* Header - Matching HomeService animation & layout */}
         <div className="pb-4 text-center flex flex-col items-center flex-shrink-0">
           <div ref={titleRef} className="flex flex-col items-center">
@@ -350,12 +405,22 @@ const HomeCompanies = ({
           </div>
 
           {/* Quick Metrics Bar */}
-          <div ref={statsRef} className="flex items-center justify-center gap-6 mt-3">
+          <div
+            ref={statsRef}
+            className="flex items-center justify-center gap-6 mt-3"
+          >
             {stats.map((stat, idx) => (
-              <div key={idx} className="flex items-center gap-2 bg-[#F6F7F7] px-4 py-1.5 rounded-full border border-zinc-200/60">
+              <div
+                key={idx}
+                className="flex items-center gap-2 bg-[#F6F7F7] px-4 py-1.5 rounded-full border border-zinc-200/60"
+              >
                 {stat.icon}
-                <span className="text-xs font-bold text-black">{stat.value}</span>
-                <span className="text-xs text-zinc-500 font-normal">{stat.label}</span>
+                <span className="text-xs font-bold text-black">
+                  {stat.value}
+                </span>
+                <span className="text-xs text-zinc-500 font-normal">
+                  {stat.label}
+                </span>
               </div>
             ))}
           </div>
@@ -367,7 +432,10 @@ const HomeCompanies = ({
           className="w-full flex-1 min-h-0 grid grid-cols-12 gap-[18px] pt-2 pb-4 grid-rows-[4fr_3fr_4fr]"
         >
           {/* Box 1 - top left, short */}
-          <div data-box className={`${boxClass} col-start-1 col-span-4 row-start-1`}>
+          <div
+            data-box
+            className={`${boxClass} col-start-1 col-span-4 row-start-1`}
+          >
             <div className="flex items-center gap-1.5 min-w-0">
               {boxes[0].icon}
               <h3 className="text-sm md:text-[15px] font-bold text-black tracking-tight leading-tight flex flex-wrap gap-x-1.5">
@@ -381,14 +449,17 @@ const HomeCompanies = ({
               </h3>
             </div>
             <div className="flex flex-wrap gap-1.5 mt-2.5">
-              {boxes[0].companies.slice(0, boxes[0].visibleCount).map((name, i) => (
-                <span
-                  key={i}
-                  className="bg-white rounded-full px-2 py-0.5 text-xs sm:text-[13px] lg:text-sm text-zinc-600 border border-zinc-200/80 max-w-full leading-snug"
-                >
-                  {name}
-                </span>
-              ))}
+              {boxes[0].companies
+                .slice(0, boxes[0].visibleCount)
+                .map((name, i) => (
+                  <span
+                    key={i}
+                    className="inline-flex items-center gap-1.5 bg-white/95 hover:bg-white text-zinc-700 hover:text-zinc-900 rounded-full px-2.5 py-1 text-xs sm:text-[12.5px] font-medium border border-zinc-200/70 hover:border-[#10B981]/40 shadow-[0_1px_2px_rgba(0,0,0,0.04)] hover:shadow-[0_2px_8px_rgba(16,185,129,0.12)] transition-all duration-200 max-w-full leading-snug group/tag cursor-default"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-[#10B981] to-[#059669] flex-shrink-0 group-hover/tag:scale-125 transition-transform" />
+                    <span className="truncate">{name}</span>
+                  </span>
+                ))}
               {boxes[0].companies.length > boxes[0].visibleCount && (
                 <button
                   type="button"
@@ -410,7 +481,10 @@ const HomeCompanies = ({
           </div>
 
           {/* Box 2 - top, next to Box 1, short */}
-          <div data-box className={`${boxClass} col-start-5 col-span-4 row-start-1`}>
+          <div
+            data-box
+            className={`${boxClass} col-start-5 col-span-4 row-start-1`}
+          >
             <div className="flex items-center gap-1.5 min-w-0">
               {boxes[1].icon}
               <h3 className="text-sm md:text-[15px] font-bold text-black tracking-tight leading-tight flex flex-wrap gap-x-1.5">
@@ -424,14 +498,17 @@ const HomeCompanies = ({
               </h3>
             </div>
             <div className="flex flex-wrap gap-1.5 mt-2.5">
-              {boxes[1].companies.slice(0, boxes[1].visibleCount).map((name, i) => (
-                <span
-                  key={i}
-                  className="bg-white rounded-full px-2 py-0.5 text-xs sm:text-[13px] lg:text-sm text-zinc-600 border border-zinc-200/80 max-w-full leading-snug"
-                >
-                  {name}
-                </span>
-              ))}
+              {boxes[1].companies
+                .slice(0, boxes[1].visibleCount)
+                .map((name, i) => (
+                  <span
+                    key={i}
+                    className="inline-flex items-center gap-1.5 bg-white/95 hover:bg-white text-zinc-700 hover:text-zinc-900 rounded-full px-2.5 py-1 text-xs sm:text-[12.5px] font-medium border border-zinc-200/70 hover:border-[#10B981]/40 shadow-[0_1px_2px_rgba(0,0,0,0.04)] hover:shadow-[0_2px_8px_rgba(16,185,129,0.12)] transition-all duration-200 max-w-full leading-snug group/tag cursor-default"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-[#10B981] to-[#059669] flex-shrink-0 group-hover/tag:scale-125 transition-transform" />
+                    <span className="truncate">{name}</span>
+                  </span>
+                ))}
               {boxes[1].companies.length > boxes[1].visibleCount && (
                 <button
                   type="button"
@@ -453,7 +530,10 @@ const HomeCompanies = ({
           </div>
 
           {/* Box 3 - top right, tall (spans row 1 + row 2) */}
-          <div data-box className={`${boxClass} col-start-9 col-span-2 row-start-1 row-span-2`}>
+          <div
+            data-box
+            className={`${boxClass} col-start-9 col-span-2 row-start-1 row-span-2`}
+          >
             <div className="flex items-center gap-1.5 min-w-0">
               {boxes[2].icon}
               <h3 className="text-sm md:text-[15px] font-bold text-black tracking-tight leading-tight flex flex-wrap gap-x-1.5">
@@ -467,14 +547,17 @@ const HomeCompanies = ({
               </h3>
             </div>
             <div className="flex flex-wrap gap-1.5 mt-2.5">
-              {boxes[2].companies.slice(0, boxes[2].visibleCount).map((name, i) => (
-                <span
-                  key={i}
-                  className="bg-white rounded-full px-2 py-0.5 text-xs sm:text-[13px] lg:text-sm text-zinc-600 border border-zinc-200/80 max-w-full leading-snug"
-                >
-                  {name}
-                </span>
-              ))}
+              {boxes[2].companies
+                .slice(0, boxes[2].visibleCount)
+                .map((name, i) => (
+                  <span
+                    key={i}
+                    className="inline-flex items-center gap-1.5 bg-white/95 hover:bg-white text-zinc-700 hover:text-zinc-900 rounded-full px-2.5 py-1 text-xs sm:text-[12.5px] font-medium border border-zinc-200/70 hover:border-[#10B981]/40 shadow-[0_1px_2px_rgba(0,0,0,0.04)] hover:shadow-[0_2px_8px_rgba(16,185,129,0.12)] transition-all duration-200 max-w-full leading-snug group/tag cursor-default"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-[#10B981] to-[#059669] flex-shrink-0 group-hover/tag:scale-125 transition-transform" />
+                    <span className="truncate">{name}</span>
+                  </span>
+                ))}
               {boxes[2].companies.length > boxes[2].visibleCount && (
                 <button
                   type="button"
@@ -496,7 +579,10 @@ const HomeCompanies = ({
           </div>
 
           {/* Box 4 - far top right, tall (spans row 1 + row 2) */}
-          <div data-box className={`${boxClass} col-start-11 col-span-2 row-start-1 row-span-2`}>
+          <div
+            data-box
+            className={`${boxClass} col-start-11 col-span-2 row-start-1 row-span-2`}
+          >
             <div className="flex items-center gap-1.5 min-w-0">
               {boxes[3].icon}
               <h3 className="text-sm md:text-[15px] font-bold text-black tracking-tight leading-tight flex flex-wrap gap-x-1.5">
@@ -510,14 +596,17 @@ const HomeCompanies = ({
               </h3>
             </div>
             <div className="flex flex-wrap gap-1.5 mt-2.5">
-              {boxes[3].companies.slice(0, boxes[3].visibleCount).map((name, i) => (
-                <span
-                  key={i}
-                  className="bg-white rounded-full px-2 py-0.5 text-xs sm:text-[13px] lg:text-sm text-zinc-600 border border-zinc-200/80 max-w-full leading-snug"
-                >
-                  {name}
-                </span>
-              ))}
+              {boxes[3].companies
+                .slice(0, boxes[3].visibleCount)
+                .map((name, i) => (
+                  <span
+                    key={i}
+                    className="inline-flex items-center gap-1.5 bg-white/95 hover:bg-white text-zinc-700 hover:text-zinc-900 rounded-full px-2.5 py-1 text-xs sm:text-[12.5px] font-medium border border-zinc-200/70 hover:border-[#10B981]/40 shadow-[0_1px_2px_rgba(0,0,0,0.04)] hover:shadow-[0_2px_8px_rgba(16,185,129,0.12)] transition-all duration-200 max-w-full leading-snug group/tag cursor-default"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-[#10B981] to-[#059669] flex-shrink-0 group-hover/tag:scale-125 transition-transform" />
+                    <span className="truncate">{name}</span>
+                  </span>
+                ))}
               {boxes[3].companies.length > boxes[3].visibleCount && (
                 <button
                   type="button"
@@ -539,7 +628,10 @@ const HomeCompanies = ({
           </div>
 
           {/* Box 5 - left, tall (spans row 2 + row 3) */}
-          <div data-box className={`${boxClass} col-start-1 col-span-2 row-start-2 row-span-2`}>
+          <div
+            data-box
+            className={`${boxClass} col-start-1 col-span-2 row-start-2 row-span-2`}
+          >
             <div className="flex items-center gap-1.5 min-w-0">
               {boxes[4].icon}
               <h3 className="text-sm md:text-[15px] font-bold text-black tracking-tight leading-tight flex flex-wrap gap-x-1.5">
@@ -553,14 +645,17 @@ const HomeCompanies = ({
               </h3>
             </div>
             <div className="flex flex-wrap gap-1.5 mt-2.5">
-              {boxes[4].companies.slice(0, boxes[4].visibleCount).map((name, i) => (
-                <span
-                  key={i}
-                  className="bg-white rounded-full px-2 py-0.5 text-xs sm:text-[13px] lg:text-sm text-zinc-600 border border-zinc-200/80 max-w-full leading-snug"
-                >
-                  {name}
-                </span>
-              ))}
+              {boxes[4].companies
+                .slice(0, boxes[4].visibleCount)
+                .map((name, i) => (
+                  <span
+                    key={i}
+                    className="inline-flex items-center gap-1.5 bg-white/95 hover:bg-white text-zinc-700 hover:text-zinc-900 rounded-full px-2.5 py-1 text-xs sm:text-[12.5px] font-medium border border-zinc-200/70 hover:border-[#10B981]/40 shadow-[0_1px_2px_rgba(0,0,0,0.04)] hover:shadow-[0_2px_8px_rgba(16,185,129,0.12)] transition-all duration-200 max-w-full leading-snug group/tag cursor-default"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-[#10B981] to-[#059669] flex-shrink-0 group-hover/tag:scale-125 transition-transform" />
+                    <span className="truncate">{name}</span>
+                  </span>
+                ))}
               {boxes[4].companies.length > boxes[4].visibleCount && (
                 <button
                   type="button"
@@ -582,7 +677,10 @@ const HomeCompanies = ({
           </div>
 
           {/* Box 6 - next to Box 5, tall (spans row 2 + row 3) */}
-          <div data-box className={`${boxClass} col-start-3 col-span-2 row-start-2 row-span-2`}>
+          <div
+            data-box
+            className={`${boxClass} col-start-3 col-span-2 row-start-2 row-span-2`}
+          >
             <div className="flex items-center gap-1.5 min-w-0">
               {boxes[5].icon}
               <h3 className="text-sm md:text-[15px] font-bold text-black tracking-tight leading-tight flex flex-wrap gap-x-1.5">
@@ -596,14 +694,17 @@ const HomeCompanies = ({
               </h3>
             </div>
             <div className="flex flex-wrap gap-1.5 mt-2.5">
-              {boxes[5].companies.slice(0, boxes[5].visibleCount).map((name, i) => (
-                <span
-                  key={i}
-                  className="bg-white rounded-full px-2 py-0.5 text-xs sm:text-[13px] lg:text-sm text-zinc-600 border border-zinc-200/80 max-w-full leading-snug"
-                >
-                  {name}
-                </span>
-              ))}
+              {boxes[5].companies
+                .slice(0, boxes[5].visibleCount)
+                .map((name, i) => (
+                  <span
+                    key={i}
+                    className="inline-flex items-center gap-1.5 bg-white/95 hover:bg-white text-zinc-700 hover:text-zinc-900 rounded-full px-2.5 py-1 text-xs sm:text-[12.5px] font-medium border border-zinc-200/70 hover:border-[#10B981]/40 shadow-[0_1px_2px_rgba(0,0,0,0.04)] hover:shadow-[0_2px_8px_rgba(16,185,129,0.12)] transition-all duration-200 max-w-full leading-snug group/tag cursor-default"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-[#10B981] to-[#059669] flex-shrink-0 group-hover/tag:scale-125 transition-transform" />
+                    <span className="truncate">{name}</span>
+                  </span>
+                ))}
               {boxes[5].companies.length > boxes[5].visibleCount && (
                 <button
                   type="button"
@@ -625,7 +726,10 @@ const HomeCompanies = ({
           </div>
 
           {/* Box 7 - middle, short (row 2 only) */}
-          <div data-box className={`${boxClass} col-start-5 col-span-4 row-start-2`}>
+          <div
+            data-box
+            className={`${boxClass} col-start-5 col-span-4 row-start-2`}
+          >
             <div className="flex items-center gap-1.5 min-w-0">
               {boxes[6].icon}
               <h3 className="text-sm md:text-[15px] font-bold text-black tracking-tight leading-tight flex flex-wrap gap-x-1.5">
@@ -639,14 +743,17 @@ const HomeCompanies = ({
               </h3>
             </div>
             <div className="flex flex-wrap gap-1.5 mt-2.5">
-              {boxes[6].companies.slice(0, boxes[6].visibleCount).map((name, i) => (
-                <span
-                  key={i}
-                  className="bg-white rounded-full px-2 py-0.5 text-xs sm:text-[13px] lg:text-sm text-zinc-600 border border-zinc-200/80 max-w-full leading-snug"
-                >
-                  {name}
-                </span>
-              ))}
+              {boxes[6].companies
+                .slice(0, boxes[6].visibleCount)
+                .map((name, i) => (
+                  <span
+                    key={i}
+                    className="inline-flex items-center gap-1.5 bg-white/95 hover:bg-white text-zinc-700 hover:text-zinc-900 rounded-full px-2.5 py-1 text-xs sm:text-[12.5px] font-medium border border-zinc-200/70 hover:border-[#10B981]/40 shadow-[0_1px_2px_rgba(0,0,0,0.04)] hover:shadow-[0_2px_8px_rgba(16,185,129,0.12)] transition-all duration-200 max-w-full leading-snug group/tag cursor-default"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-[#10B981] to-[#059669] flex-shrink-0 group-hover/tag:scale-125 transition-transform" />
+                    <span className="truncate">{name}</span>
+                  </span>
+                ))}
               {boxes[6].companies.length > boxes[6].visibleCount && (
                 <button
                   type="button"
@@ -668,7 +775,10 @@ const HomeCompanies = ({
           </div>
 
           {/* Box 8 - bottom, under Box 7, short */}
-          <div data-box className={`${boxClass} col-start-5 col-span-4 row-start-3`}>
+          <div
+            data-box
+            className={`${boxClass} col-start-5 col-span-4 row-start-3`}
+          >
             <div className="flex items-center gap-1.5 min-w-0">
               {boxes[7].icon}
               <h3 className="text-sm md:text-[15px] font-bold text-black tracking-tight leading-tight flex flex-wrap gap-x-1.5">
@@ -682,14 +792,17 @@ const HomeCompanies = ({
               </h3>
             </div>
             <div className="flex flex-wrap gap-1.5 mt-2.5">
-              {boxes[7].companies.slice(0, boxes[7].visibleCount).map((name, i) => (
-                <span
-                  key={i}
-                  className="bg-white rounded-full px-2 py-0.5 text-xs sm:text-[13px] lg:text-sm text-zinc-600 border border-zinc-200/80 max-w-full leading-snug"
-                >
-                  {name}
-                </span>
-              ))}
+              {boxes[7].companies
+                .slice(0, boxes[7].visibleCount)
+                .map((name, i) => (
+                  <span
+                    key={i}
+                    className="inline-flex items-center gap-1.5 bg-white/95 hover:bg-white text-zinc-700 hover:text-zinc-900 rounded-full px-2.5 py-1 text-xs sm:text-[12.5px] font-medium border border-zinc-200/70 hover:border-[#10B981]/40 shadow-[0_1px_2px_rgba(0,0,0,0.04)] hover:shadow-[0_2px_8px_rgba(16,185,129,0.12)] transition-all duration-200 max-w-full leading-snug group/tag cursor-default"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-[#10B981] to-[#059669] flex-shrink-0 group-hover/tag:scale-125 transition-transform" />
+                    <span className="truncate">{name}</span>
+                  </span>
+                ))}
               {boxes[7].companies.length > boxes[7].visibleCount && (
                 <button
                   type="button"
@@ -711,7 +824,10 @@ const HomeCompanies = ({
           </div>
 
           {/* Box 9 - bottom right, under Box 3/4, short */}
-          <div data-box className={`${boxClass} col-start-9 col-span-4 row-start-3`}>
+          <div
+            data-box
+            className={`${boxClass} col-start-9 col-span-4 row-start-3`}
+          >
             <div className="flex items-center gap-1.5 min-w-0">
               {boxes[8].icon}
               <h3 className="text-sm md:text-[15px] font-bold text-black tracking-tight leading-tight flex flex-wrap gap-x-1.5">
@@ -725,14 +841,17 @@ const HomeCompanies = ({
               </h3>
             </div>
             <div className="flex flex-wrap gap-1.5 mt-2.5">
-              {boxes[8].companies.slice(0, boxes[8].visibleCount).map((name, i) => (
-                <span
-                  key={i}
-                  className="bg-white rounded-full px-2 py-0.5 text-xs sm:text-[13px] lg:text-sm text-zinc-600 border border-zinc-200/80 max-w-full leading-snug"
-                >
-                  {name}
-                </span>
-              ))}
+              {boxes[8].companies
+                .slice(0, boxes[8].visibleCount)
+                .map((name, i) => (
+                  <span
+                    key={i}
+                    className="inline-flex items-center gap-1.5 bg-white/95 hover:bg-white text-zinc-700 hover:text-zinc-900 rounded-full px-2.5 py-1 text-xs sm:text-[12.5px] font-medium border border-zinc-200/70 hover:border-[#10B981]/40 shadow-[0_1px_2px_rgba(0,0,0,0.04)] hover:shadow-[0_2px_8px_rgba(16,185,129,0.12)] transition-all duration-200 max-w-full leading-snug group/tag cursor-default"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-[#10B981] to-[#059669] flex-shrink-0 group-hover/tag:scale-125 transition-transform" />
+                    <span className="truncate">{name}</span>
+                  </span>
+                ))}
               {boxes[8].companies.length > boxes[8].visibleCount && (
                 <button
                   type="button"

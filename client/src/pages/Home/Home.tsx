@@ -390,36 +390,6 @@ const Home = ({ isAdminMode = false }: HomeProps) => {
       return el.scrollTop <= 20;
     };
 
-    const scrollToFooter = () => {
-      const el = ctaRef.current;
-      if (!el || isAnimatingRef.current) return;
-      const maxScroll = el.scrollHeight - el.clientHeight;
-      if (maxScroll <= 0) return;
-      isAnimatingRef.current = true;
-      gsap.to(el, {
-        scrollTop: maxScroll,
-        duration: 1.2,
-        ease: "power3.inOut",
-        onComplete: () => {
-          isAnimatingRef.current = false;
-        },
-      });
-    };
-
-    const scrollToCtaTop = () => {
-      const el = ctaRef.current;
-      if (!el || isAnimatingRef.current) return;
-      isAnimatingRef.current = true;
-      gsap.to(el, {
-        scrollTop: 0,
-        duration: 1.2,
-        ease: "power3.inOut",
-        onComplete: () => {
-          isAnimatingRef.current = false;
-        },
-      });
-    };
-
     const handleWheel = (e: WheelEvent) => {
       if (isAnimatingRef.current) {
         // Block native scroll while a GSAP transition/tween owns scrollTop,
@@ -454,11 +424,7 @@ const Home = ({ isAdminMode = false }: HomeProps) => {
           e.preventDefault();
           transitionToCta();
         } else if (activeSection === "cta") {
-          if (isCtaAtTop()) {
-            e.preventDefault();
-            scrollToFooter();
-          }
-          // else: let native scroll continue inside cta
+          // let native scroll handle footer viewing naturally inside cta
         }
       } else if (e.deltaY < -15) {
         if (activeSection === "about") {
@@ -481,10 +447,7 @@ const Home = ({ isAdminMode = false }: HomeProps) => {
           e.preventDefault();
           transitionToService();
         } else if (activeSection === "cta") {
-          if (!isCtaAtTop()) {
-            e.preventDefault();
-            scrollToCtaTop();
-          } else {
+          if (isCtaAtTop()) {
             e.preventDefault();
             transitionToCompanies();
           }
@@ -515,9 +478,7 @@ const Home = ({ isAdminMode = false }: HomeProps) => {
         } else if (activeSection === "companies") {
           transitionToCta();
         } else if (activeSection === "cta") {
-          if (isCtaAtTop()) {
-            scrollToFooter();
-          }
+          // let native scroll handle footer viewing naturally
         }
       } else if (diffY < -50) {
         if (activeSection === "about") {
@@ -536,9 +497,7 @@ const Home = ({ isAdminMode = false }: HomeProps) => {
         } else if (activeSection === "companies") {
           transitionToService();
         } else if (activeSection === "cta") {
-          if (!isCtaAtTop()) {
-            scrollToCtaTop();
-          } else {
+          if (isCtaAtTop()) {
             transitionToCompanies();
           }
         }

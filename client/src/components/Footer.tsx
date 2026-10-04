@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import buildingImg from "../assets/images/building.jpg";
 
 const Footer = () => {
   return (
@@ -33,10 +34,10 @@ const Footer = () => {
                 About Us
               </Link>
               <Link
-                to="/team"
+                to="/services"
                 className="text-xs md:text-sm text-zinc-600 hover:text-black transition-colors"
               >
-                Our Team
+                Our Services
               </Link>
               <Link
                 to="/clients"
@@ -100,11 +101,18 @@ const Footer = () => {
                 </a>
               </div>
 
-              <p className="text-xs md:text-sm text-zinc-600 leading-relaxed mt-2">
+              <p className="text-xs md:text-sm text-zinc-600 leading-relaxed">
                 Eastern Mansion, Room # 3/7 (3<sup>rd</sup> Floor),
                 <br />
                 67/9 Pioneer Road, Kakrail, Dhaka-1000
               </p>
+            </div>
+            <div className="flex items-start justify-end">
+              <img
+                src={buildingImg}
+                alt="Building"
+                className="w-[270px] h-[320px] object-cover rounded-lg border border-zinc-200"
+              />
             </div>
           </div>
         </div>
