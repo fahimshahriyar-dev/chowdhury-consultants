@@ -148,10 +148,6 @@ const HomeService = ({ active = false, onGoToPreviousPage, onGoToNextPage }: Hom
     clearUnlockTimeout();
   };
 
-  // Stepper ball animated position
-  const [ballTop, setBallTop] = useState<number>(16);
-  const containerStepperRef = useRef<HTMLDivElement>(null);
-
   // Custom Cursor State when hovering service box
   const [isHoveringBox, setIsHoveringBox] = useState<boolean>(false);
   const [cursorDir, setCursorDir] = useState<"up" | "down">("down");
@@ -166,11 +162,6 @@ const HomeService = ({ active = false, onGoToPreviousPage, onGoToNextPage }: Hom
     const newIdx = servicesData.findIndex((s) => s.id === newId);
     const isNext = newId > currentId;
 
-    // 1. Instantly trigger ball animation and active text state update
-    const targetBtn = stepperItemsRef.current[newIdx];
-    if (targetBtn && containerStepperRef.current) {
-      setBallTop(targetBtn.offsetTop + targetBtn.offsetHeight / 2);
-    }
     setSelectedSectionId(newId);
 
     isAnimatingRef.current = true;
@@ -293,24 +284,6 @@ const HomeService = ({ active = false, onGoToPreviousPage, onGoToNextPage }: Hom
   useEffect(() => {
     return () => clearUnlockTimeout();
   }, []);
-
-  // Update ball Y offset dynamically on selection change to align with center of active button
-  useEffect(() => {
-    const updateBallPosition = () => {
-      const selectedIdx = servicesData.findIndex((s) => s.id === selectedSectionId);
-      const targetBtn = stepperItemsRef.current[selectedIdx];
-      if (targetBtn && containerStepperRef.current) {
-        const btnOffsetTop = targetBtn.offsetTop;
-        const btnHeight = targetBtn.offsetHeight;
-        // Position ball right at exact vertical center of the section option text button
-        setBallTop(btnOffsetTop + btnHeight / 2);
-      }
-    };
-
-    updateBallPosition();
-    window.addEventListener("resize", updateBallPosition);
-    return () => window.removeEventListener("resize", updateBallPosition);
-  }, [selectedSectionId]);
 
   // Wheel navigation on the service box: scroll between options at boundaries,
   // and hand off to the previous/next page at the very first/last option.
@@ -523,9 +496,9 @@ const HomeService = ({ active = false, onGoToPreviousPage, onGoToNextPage }: Hom
         </div>
 
         {/* Content layout: Stepper Left, Data Boxes Right */}
-        <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-12 flex-1 min-h-0">
+        <div className="flex flex-col lg:flex-row items-start gap-6 lg:gap-12 flex-1 min-h-0">
           {/* Left: Box Option Buttons */}
-          <div ref={stepperContainerRef} className="w-full lg:w-[38%] flex flex-col gap-3 py-2 h-full overflow-y-auto">
+          <div ref={stepperContainerRef} className="w-full lg:w-[38%] flex flex-row lg:flex-col gap-2.5 sm:gap-3 py-1 lg:py-2 overflow-x-auto lg:overflow-y-auto flex-shrink-0 scrollbar-none">
             {servicesData.map((item, index) => {
               const isSelected = item.id === selectedSectionId;
               return (
@@ -535,13 +508,13 @@ const HomeService = ({ active = false, onGoToPreviousPage, onGoToNextPage }: Hom
                     stepperItemsRef.current[index] = el;
                   }}
                   onClick={() => handleSectionSelect(item.id)}
-                  className={`w-full text-left px-5 py-4 rounded-2xl border transition-all duration-300 cursor-pointer will-change-transform ${
+                  className={`whitespace-nowrap lg:whitespace-normal text-left px-4 lg:px-5 py-3 lg:py-4 rounded-xl lg:rounded-2xl border transition-all duration-300 cursor-pointer will-change-transform flex-shrink-0 ${
                     isSelected
                       ? "bg-black border-black text-white"
                       : "bg-white border-zinc-200 text-zinc-700 hover:border-zinc-400 hover:text-black"
                   }`}
                 >
-                  <span className="text-sm md:text-base lg:text-[15px] xl:text-base font-medium leading-snug">
+                  <span className="text-xs sm:text-sm md:text-base lg:text-[15px] xl:text-base font-medium leading-snug">
                     {item.optionLabel}
                   </span>
                 </button>
